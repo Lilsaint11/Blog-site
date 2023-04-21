@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route exact path = "/" element={<Home />} />
             <Route path = "/blogs" element={<Blogs />} />
-            <Route path = "/blogs/:id" element={<BlogDetails />} />
+            <Route path = "/blog/:id" element={<BlogDetails />} />
             <Route path = "*" element={<NotFound/>} />
           </Routes>
         </div>

@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
 
 const SideBar = ({blogs}) => {
-    const sideBlogs = blogs.filter(blog => blog.id > 6); 
-    console.log(sideBlogs)
-    
+    //const sideBlogs = blogs.filter(blog => blog.id > 6); 
+   // console.log(sideBlogs)
+  
     return ( 
+        <>
         <div className="sidebar">
             <div className="related-posts">
                 <h3>Related posts</h3>
-                {sideBlogs.map(sideBlog => (
-                 <Link to={`/blogs/${sideBlog.id}`} className="details">
-                    <div className="post" key={sideBlog.id}>
-                        <img src={ sideBlog.image } alt="img" />
-                        <p>{ sideBlog.title }</p>
+                {blogs.filter((blog) => blog.data.type == "sidebar").map((blog) => (
+                 <Link to={`/blog/${blog.id}`} className="details">
+                    <div className="post" key={blog.id}>
+                        <img src={ blog.data.image } alt="img" />
+                        <p>{ blog.data.title }</p>
                     </div>
                 </Link>
-            ))}
+                ))}
             </div>
 
             <div className="article">
@@ -28,6 +29,7 @@ const SideBar = ({blogs}) => {
                 </p>
             </div>
         </div>
+        </>
      );
 }
  

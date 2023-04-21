@@ -1,22 +1,49 @@
-import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "./useFetch";
+import { useParams } from "react-router-dom";
+import {getDoc,doc, onSnapshot} from "firebase/firestore";
+import {db} from "./firebase"
+import { useEffect } from "react";
+import { useState } from "react";
+import Spinner from "./spinner";
+
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
-    const navigate = useNavigate();
+    const[blogData, setBlogData] = useState();
+    const [loading,setLoading] = useState(true);
 
+    useEffect(()=>{
+        async function fetchUserblogs(){
+            const blogRef = doc(db,"blogs",id);
+            await getDoc(blogRef)
+            .then((doc)=> {
+                let blogData
+                blogData = doc.data()
+                setBlogData(blogData)
+                setLoading(false)
+            })
+            onSnapshot(blogRef, (doc) => {
+                let blogData
+                blogData = doc.data()
+                setBlogData(blogData)
+                setLoading(false)
+            })
+        
+        }
+        fetchUserblogs()
+    },[])
+
+    if (loading) {
+        return <Spinner />;
+      }
     return ( 
         <div className="blog-details">
-            { isPending && <div> Loading... </div> }
-            { error && <div>{ error }</div> }
-            {blog && (
+            {blogData && (
                 <article>
-                    <div><img src={ blog.image}></img></div>
+                    <div><img src={ blogData.image}></img></div>
                     <div>
-                    <h2>{ blog.title}</h2>
-                    <div className="full-article">{ blog.body }</div>
-                    <p>Written by { blog.author }.</p>
+                    <h2>{ blogData.title}</h2>
+                    <div className="full-article">{ blogData.body }</div>
+                    <p>Written by { blogData.author }.</p>
                     </div>
                 </article>
             ) }
