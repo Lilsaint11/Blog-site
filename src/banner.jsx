@@ -15,17 +15,17 @@ const Banner = () => {
                  autoplay={{ delay: 3000 }}
                 >
                 <SwiperSlide>
-                    <div className="relative w-full overflow-hidden h-[400px]">
+                    <div className="">
                         <img src="https://images.unsplash.com/photo-1679214523482-231359cf68f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="banner" />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="relative w-full overflow-hidden h-[400px]">
+                    <div className="">
                         <img src="https://images.unsplash.com/photo-1681284298614-4a10f165bb37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="banner" />
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="relative w-full overflow-hidden h-[400px]">
+                    <div className="">
                         <img src="https://images.unsplash.com/photo-1680430631356-02d24afabc5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDgzfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="banner" />
                     </div>
                 </SwiperSlide>

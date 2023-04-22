@@ -10,7 +10,7 @@ const SideBar = ({blogs}) => {
             <div className="related-posts">
                 <h3>Related posts</h3>
                 {blogs.filter((blog) => blog.data.type == "sidebar").map((blog) => (
-                 <Link to={`/blog/${blog.id}`} className="details">
+                 <Link to={`/blog/${blog.id}`} className="side-details">
                     <div className="post" key={blog.id}>
                         <img src={ blog.data.image } alt="img" />
                         <p>{ blog.data.title }</p>
