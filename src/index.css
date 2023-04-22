@@ -405,6 +405,10 @@
   .blog-details img {
     max-width: 20em;
   }
+  .related-posts h3,
+  .article h3 {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 390px) {
@@ -423,10 +427,6 @@
   }
   .blog-preview p {
     font-size: 13px;
-  }
-  .related-posts h3,
-  .article h3 {
-    font-size: 15px;
   }
   .blog-details img {
     max-width: 17em;
