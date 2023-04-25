@@ -333,6 +333,9 @@
   .blog-details img {
     max-width: 30em;
   }
+  .blog-list .container .blog-preview img {
+    min-height: 10em;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -395,6 +398,9 @@
 }
 
 @media screen and (max-width: 425px) {
+  .home {
+    max-width: 280px;
+  }
   .links {
     max-width: 150px;
     height: 40%;
